@@ -13,5 +13,5 @@ The following table outlines the schedule for the training sessions:
 
 |  Material     | Tema                            | Instructor            |  Laboratorio  |
 | ------------- | ------------------------------- | -------------         | --------------
-| 1             | Configuracion  backend service  | Dani Gtz y Gabriel Córdoba      |  [Configuración backend service](backend)
+| 1             | Configuracion  backend service  | Dani Gtz y Gabriel Córdoba      |  [Configuración backend service](backend.md)
 | 2             | Frontend service                | Dani Gtz          |  [Configuración backend service](frontend)
