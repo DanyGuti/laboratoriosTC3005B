@@ -77,7 +77,7 @@ Una vez que ya tienes el proyecto creado de Firebase, ahora, sigue intalar las d
   <h2>
     Documento Eslint antes de modificaciones
   <h2>
-  <img src="backendLabImg.png" width="250" height="200">
+  <img src="backendImgs/backendLabImg.png" width="250" height="200">
 </div>
 
 ---
@@ -120,7 +120,7 @@ npm i nodemon --save-dev
   <h2>
     Documento Eslint antes de modificaciones
   <h2>
-  <img src="packageJson.png" width="320" height="425">
+  <img src="backendImgs/packageJson.png" width="320" height="425">
 </div>
 
 ---
@@ -162,7 +162,7 @@ Una vez creado, realizar las siguientes modificaciones:
   <h2>
     Documento Eslint antes de modificaciones
   <h2>
-  <img src="eslintBef.png" width="320" height="500">
+  <img src="backendImgs/eslintBef.png" width="320" height="500">
 </div>
 
 
@@ -170,7 +170,7 @@ Una vez creado, realizar las siguientes modificaciones:
   <h2>
     Documento Eslint después de modificaciones
   <h2>
-  <img src="eslintAft.png" width="400" height="480">
+  <img src="backendImgs/eslintAft.png" width="400" height="480">
 </div>
 
 Ahora sí, tenemos el estándar del equipo Housse of Valkyr de desarrollo del código
@@ -310,7 +310,7 @@ Teniendo todo lo anterior, el folder de infra luce así:
   <h2>
     Directorio de infraestructura
   <h2>
-  <img src="infraDir.png" width="250" height="225">
+  <img src="backendImgs/infraDir.png" width="250" height="225">
 </div>
 
 
@@ -382,7 +382,7 @@ Primero, deberás crear los directorios necesario, deberá de quedarte de la sig
   <h4 style="text-aign: center;">
   Src folder
   <h4>
-  <img src="srcFolder.png" width="245" height="225">
+  <img src="backendImgs/srcFolder.png" width="245" height="225">
 </div>
 
 ### 8.2 Configuración base de datos
@@ -721,7 +721,7 @@ Si seguiste todos los pasos y correción de errores, deberás de correr los cont
   <h3>
     Si hiciste todos los pasos anteriores bien, debes ver lo siguiente:
   <h3>
-  <img src="dockerBuild.png" width="500" height="225">
+  <img src="backendImgs/dockerBuild.png" width="500" height="225">
 </div>
 
 Ahora, tienes acceso localmente a tu base de datos para hacer pruebas locales. 
@@ -753,7 +753,7 @@ Manda el request, y verás reflejado el resultado en tu emulador, firestore.
   <h3>
     Resultado
   <h3>
-  <img src="resultado.png" width="600" height="225">
+  <img src="backendImgs/resultado.png" width="600" height="225">
 </div>
 
 ### Marcar checklist si se cumplió.
@@ -895,14 +895,14 @@ export const updateMessage = async (req, res) => {
     </tr>
     <tr>
       <td> 
-       <img src="getAllMssgs.png" width="200" height="150">
+       <img src="backendImgs/getAllMssgs.png" width="200" height="150">
       </td>
       <td>
-      <img src="deleteMssg.png" width="150" height="150">
+      <img src="backendImgs/deleteMssg.png" width="150" height="150">
       </td>
       <td>
-            <img src="patchMssg1.png" width="150" height="150">
-            <img src="patchMssg2.png" width="150" height="150">
+            <img src="backendImgs/patchMssg1.png" width="150" height="150">
+            <img src="backendImgs/patchMssg2.png" width="150" height="150">
       </td>
     </tr>
   </table>
