@@ -131,7 +131,9 @@ firebase init firestore
 ---
 Al correr el comando. Deberás seleccionar las siguientes opciones:
 > Opción de utilizar un proyecto existente
+
 > Seleccionar el proyecto de Firebase que ya habías creado anteriormente.
+
 > Te saldrá un error, deberás de acceder al link mostrado en tu terminal e inicializar una base de datos Firestore en la zona que más te plazca.
 
 (Tómate el tiempo de inicializar base de datos de Firestore dentro de tu proyecto de Firebase).
@@ -323,6 +325,36 @@ services:
 
 Por último, el archivo ```.dockerignore```, que funciona como un .gitignore, pero el archivo que se ponga dentro, será obviado al momento de construir una imagen.
 
+```
+**/.classpath
+**/.dockerignore
+**/.git
+../.idea/.gitignore
+**/.project
+**/.settings
+**/.toolstarget
+**/.vs
+**/.vscode
+**/.next
+**/.cache
+**/*.*proj.user
+**/*.dbmdl
+**/*.jfm
+**/charts
+**/docker-compose*
+**/compose*
+**/Dockerfile*
+**/node_modules
+**/npm-debug.log
+**/obj
+**/secrets.dev.yaml
+**/values.dev.yaml
+**/build
+**/dist
+LICENSE
+README.md
+```
+
 Fuera de mi alcance, deberás de seguir la siguiente instalación de SDK de Google:
 * https://cloud.google.com/sdk/docs/install?hl=es-419
 * Una vez instalado el sdk y los pasos del proceso anterior, deberás de ejecutar `gcloud auth login`.
@@ -430,7 +462,7 @@ Flujo de una aplicación con arquitectura MVC típica utilizando express:
 
 ### 8.1 Configuración directorios
 
-Primero, deberás crear los directorios necesario, deberá de quedarte de la siguiente manera
+Primero, deberás crear los directorios necesario
 
 <div style="text-align: center;">
   <h4 style="text-align: left;">
@@ -598,7 +630,7 @@ import Message from "../models/message.model.js";
 ```
 
 
-### 8.5.1 Agregar mensaje
+### 8.5.2 Agregar mensaje
 
 ```
 export const addMessage =
@@ -619,7 +651,7 @@ export const addMessage =
     }
   };
 ```
-NO OLVIDE ES ESTÁNDAR DE DOCUMENTACIÓN:
+NO OLVIDE EL ESTÁNDAR DE DOCUMENTACIÓN:
 
 ```
 /**
@@ -678,9 +710,16 @@ Deberás escribir lo siguiente en la parte de `scripts`
 ### Paso 10 variables de entorno
 
 Deberás de crear el .ENV conteniendo la información puesta en `db.config.js`. En este caso, lo pondremos en el folder de infra. Deberás de obtener las llaves proporcionadas por el proyecto de firebase.
+Dichas llaves, se pueden encontrar en la página de tu Firebase project.
 
-Deberá verse algo así:
+<div style="text-align: center;">
+  <h2>
+    En el menú, selecciona el engrenaje
+  <h2>
+  <img src="backendImgs/firebaseMenu.png" width="210" height="400">
+</div>
 
+Scrollea la pantalla hasta abajo y verás algo así, como `firebaseConfig`:
 ```
 apiKey=
 authDomain=<project-name>.firebaseapp.com
@@ -690,14 +729,15 @@ messagingSenderId=<message-sender-id>
 appId=<app-id>
 measurementId=<measurement>
 ```
-
+Guarda las variables, y crea tu `.ENV` dentro de directorio `infra/`.
 
 ## Paso 11 Corrección de errores
+
 >> En ```package.json``` deberás escribir:
 ```
   "type": "module",
 ```
-justo antes de   `"scripts": {},`
+Justo antes de `"scripts": {},`
 
 >> En ```index.js``` deberás escribir en la parte de arriba:
 
@@ -766,8 +806,6 @@ npx husky init
 }
 ```
 
-
-
 Si seguiste todos los pasos y correción de errores, deberás de correr los contenedores de docker.
 
 ## Paso 12 Levantar docker
@@ -782,7 +820,7 @@ Si seguiste todos los pasos y correción de errores, deberás de correr los cont
 </div>
 
 Ahora, tienes acceso localmente a tu base de datos para hacer pruebas locales. 
-Para probar en tu navegador corre:
+Para probar en tu navegador, corre:
 ``` http://localhost:4000```
 
 ## Paso 13 Llamada POSTMAN
