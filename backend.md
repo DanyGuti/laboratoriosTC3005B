@@ -378,7 +378,7 @@ Verás cuentas de servicio en Google console, deberás seleccionar la cuenta de 
   <h2>
     Google console, sección Cuentas de Servicio
   <h2>
-  <img src="backendImgs/IAM.png" width="220" height="225">
+  <img src="backendImgs/cloudKey.png" width="220" height="225">
 </div>
 
 Después:
@@ -851,18 +851,18 @@ Manda el request, y verás reflejado el resultado en tu emulador, firestore.
   <img src="backendImgs/resultado.png" width="600" height="225">
 </div>
 
-### Marcar checklist si se cumplió.
+### Marcar checklist si se cumplió con la conexión de Firebase emulator y Docker en [Matriz de capacitación](https://docs.google.com/spreadsheets/d/145XwjhKBz13pcvVxq15e32lJOc5O17LS0yksrM53FXE/edit#gid=0).
 
 
 ## Paso 14 Implementación CRUD faltante
 
->> En ```message.routes.js``` deberás de descomentar las siguientes: funciones
+>> En ```message.routes.js``` deberás de descomentar las siguientes funciones:
 * getAllMessages
 * deleteMessage
 
->> En ```message.controller.js``` deberás agregar el siguiente código
+>> Dirígete a ```message.controller.js```
 
->> Método ```GET```
+>> Método ```GET```, analiza, copia y pega lo siguiente:
 ```
   /**
  * Get all messages from the database.
@@ -892,10 +892,11 @@ export const getAllMessages = async (req, res) => {
 
 IMPLEMENTAR getMessage en ```message.controller.js```
 
-### Marcar checklist si se cumplió.
+### Marcar checklist si se pudo realizar getMessage() [Matriz de capacitación](https://docs.google.com/spreadsheets/d/145XwjhKBz13pcvVxq15e32lJOc5O17LS0yksrM53FXE/edit#gid=0).
 
+>> Dirígete a ```message.controller.js```
 
->> Método ````DELETE````
+>> Método ````DELETE````, analiza, copia y pega lo siguiente:
 ```
 /** 
  * Delete a message from the database.
@@ -936,7 +937,7 @@ export const deleteMessage = async (req, res) => {
 router.patch("/update/:messageId", MessageController.updateMessage);
 ```
 
->> Ve a ```message.controller.js```
+>> Ve a ```message.controller.js``` analiza, copia y pega lo siguiente:
 
 ```
 /**
@@ -974,7 +975,7 @@ export const updateMessage = async (req, res) => {
 }
 ```
 
-### Marcar checklist si se implementó getMessage
+### Marcar checklist si se implementó el CRUD correctamente: [Matriz de capacitación](https://docs.google.com/spreadsheets/d/145XwjhKBz13pcvVxq15e32lJOc5O17LS0yksrM53FXE/edit#gid=0)
 
 
 
