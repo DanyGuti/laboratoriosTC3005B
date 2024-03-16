@@ -25,9 +25,6 @@ Las tecnologías a utilizar son las siguientes:
 * Firestore
 * JSDoc
 * ESLint plugin de AirBnB
-* Mocha
-* Chai
-* Github actions
   
 ---
 
@@ -38,16 +35,16 @@ Las tecnologías a utilizar son las siguientes:
 
 ## Instrucciones
 
-Seguir los pasos descritos para llevar acabo la práctica de la misma y llegar a cierto nivel de dominio de las tecnologías descritas anteriormente.
+Seguir los pasos descritos para llevar a cabo la práctica de la misma y llegar a cierto nivel de dominio de las tecnologías descritas anteriormente.
 
 ---
 
 ## Paso 1 Estructura del proyecto
 
 Comenzaremos por ordenar el flujo del proyecto.
-En este caso, utilizaremos un MVC, tal como en el proyecto.
+En este caso, utilizaremos un MVC, tal como en el proyecto Housse of Valkyr.
 
-
+>> Estructura del proyecto
 - infra
   - compose.yaml
   - Dockerfile
@@ -69,29 +66,29 @@ En este caso, utilizaremos un MVC, tal como en el proyecto.
 
 ## Paso 2 Creación del proyecto
 
-Una vez que ya tienes el proyecto creado de Firebase, ahora, sigue intalar las dependencias y estructurar el proyecto.
+Una vez que ya tienes el proyecto creado de Firebase, ahora, sigue instalar las dependencias y estructurar el proyecto.
 
 ---
 
 <div style="text-align: center;">
   <h2>
-    Documento Eslint antes de modificaciones
+    Directorio root con estructura principal
   <h2>
   <img src="backendImgs/backendLabImg.png" width="250" height="200">
 </div>
 
 ---
 
-Deberás de ejecutar los siguientes comandos:
+Deberás de ejecutar los siguientes comandos en tu terminal dentro del proyecto.
 
 Dependencias para inicializar el proyecto:
 ``` 
 npm init
 npm i firebase-tools
-npm install firebase-functions@latest firebase-admin@latest --save
+npm i firebase-functions@latest firebase-admin@latest --save
 npm i @google-cloud/functions-framework
   ```
-Dependencias externas necesarias para el proyecto:
+Dependencias externas a Google necesarias para el proyecto:
 ```
 npm i chai@4.3.8
 npm i chai-http@4.4.0
@@ -118,7 +115,7 @@ npm i nodemon --save-dev
 
 <div style="text-align: center;">
   <h2>
-    Documento Eslint antes de modificaciones
+    Documento Package.json
   <h2>
   <img src="backendImgs/packageJson.png" width="320" height="425">
 </div>
@@ -126,13 +123,18 @@ npm i nodemon --save-dev
 ---
 ## Paso 3 Creación de base de datos Firestore
 
-Antes, debemos de instalar lo siguiente:
+Antes de pasar con incializar la base de datos Firestore en la UI de tu proyecto Firebase, debemos de instalar lo siguiente:
 ```
 firebase init firestore
 ```
 
 ---
-Al correr el comando. Deberás seleccionar la opción de utilizar un proyecto existente, seleccionar el proyecto que ya habías creado. Te saldrá un error, deberás de acceder a ese link e inicializar una base de datos en la zona que más te plazca.
+Al correr el comando. Deberás seleccionar las siguientes opciones:
+> Opción de utilizar un proyecto existente
+> Seleccionar el proyecto de Firebase que ya habías creado anteriormente.
+> Te saldrá un error, deberás de acceder al link mostrado en tu terminal e inicializar una base de datos Firestore en la zona que más te plazca.
+
+(Tómate el tiempo de inicializar base de datos de Firestore dentro de tu proyecto de Firebase).
 
 ---
 
@@ -165,17 +167,45 @@ Una vez creado, realizar las siguientes modificaciones:
   <img src="backendImgs/eslintBef.png" width="320" height="500">
 </div>
 
+Deberás cambiarlo al estándar del proyecto Housse of Valkyr.
+```
+module.exports = {
+  env: {
+    es6: true,
+    node: true,
+  },
+  parserOptions: {
+    "ecmaVersion": 2018,
+  },
+  extends: [
+    "eslint:recommended",
+    "airbnb-base",
+  ],
+  rules: {
+    "no-restricted-globals": ["error", "name", "length"],
+    "prefer-arrow-callback": "error",
+    "quotes": ["error", "double", {"allowTemplateLiterals": true}],
+    "indent": ["error", 4],
+    "max-len": ["error", {"code": 120}],
+  },
+  overrides: [
+    {
+      files: ["**/*.spec.*"],
+      env: {
+        mocha: true,
+      },
+      rules: {},
+    },
+  ],
+  globals: {},
+};
 
-<div style="text-align: center;">
-  <h2>
-    Documento Eslint después de modificaciones
-  <h2>
-  <img src="backendImgs/eslintAft.png" width="400" height="480">
-</div>
+```
 
-Ahora sí, tenemos el estándar del equipo Housse of Valkyr de desarrollo del código
+Ahora sí, tenemos el estándar del equipo Housse of Valkyr de desarrollo del código.
+
 ## Paso 5 Configuración Docker
-En realidad, esto no nos interesa demasiado, únicamente lo comento porque es una herramienta bastante útil, que nos permite manejar versiones de una mejor manera. Se realizan ¨contenerizaciones¨, las cuales consisten en isolar cierto nivel de virtualización. Nos permite en este caso manejar mismas versiones, y además, podremos hacer carga directa al emulador de firebase:emulator de manera local, importando y exportando datos.
+En realidad, veremos a docker desde el punto de vista para el manjeo de versiones, lo comento porque es una herramienta bastante útil en otros ámbitos. Nos permite manejar versiones de una mejor manera. Se realizan ¨contenerizaciones¨, las cuales consisten en isolar cierto nivel de virtualización. Nos permite en este caso manejar mismas versiones, y además, podremos hacer carga directa al emulador de firebase:emulator de manera local, importando y exportando datos.
 
 >> Folder de infra, deberemos de crear un file: ```Dockerfile``` encargado de levantar un ambiente node
 
@@ -293,16 +323,43 @@ services:
 
 Por último, el archivo ```.dockerignore```, que funciona como un .gitignore, pero el archivo que se ponga dentro, será obviado al momento de construir una imagen.
 
-Fuera de mi alcance, deberás de seguir la siguiente instalación:
+Fuera de mi alcance, deberás de seguir la siguiente instalación de SDK de Google:
 * https://cloud.google.com/sdk/docs/install?hl=es-419
 * Una vez instalado el sdk y los pasos del proceso anterior, deberás de ejecutar `gcloud auth login`.
+
 
 Después, deberás de generar una clave de tipo JSON, llave que proporciona el servicio adecuado para utilizar firebase y servicios relacionados con un proyecto de firebase:
 * Emulator
 * Firestore
 * Analytics
 
-Solamente por mencionar algunos pero hay de muchos tipos.
+Deberás dirigirte a la consola de Google, seleccionando `IAM y administración`.
+<div style="text-align: center;">
+  <h2>
+    Google console, sección Cuentas de Servicio
+  <h2>
+  <img src="backendImgs/IAM.png" width="220" height="225">
+</div>
+
+Verás cuentas de servicio en Google console, deberás seleccionar la cuenta de servicio (acciones) y seleccionar `Administrar claves`.
+<div style="text-align: center;">
+  <h2>
+    Google console, sección Cuentas de Servicio
+  <h2>
+  <img src="backendImgs/IAM.png" width="220" height="225">
+</div>
+
+Después:
+> `agregar clave`
+
+> `crear clave nueva`
+
+> `generar clave en formato JSON`
+
+Dicha clave, deberás de poner el archivo JSON dentro del directorio `/infra`. 
+
+Dicho archivo tiene nombre de: `gcloud_key.json`
+
 
 Teniendo todo lo anterior, el folder de infra luce así:
 
@@ -908,6 +965,8 @@ export const updateMessage = async (req, res) => {
   </table>
 </div>
 
-### Marcar checklist si se cumplió.
+### Marcar checklist si se cumplió en la matriz de capacitación con SS:
 
-# FELCIDIDADES HAS TERMINADO EL LABORATORIO BACKEND
+[Matriz de capacitación](https://docs.google.com/spreadsheets/d/145XwjhKBz13pcvVxq15e32lJOc5O17LS0yksrM53FXE/edit#gid=0)
+
+# FELICIDADES HAS TERMINADO EL LABORATORIO BACKEND
