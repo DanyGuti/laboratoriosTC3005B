@@ -1003,7 +1003,7 @@ export const updateMessage = async (req, res) => {
   </table>
 </div>
 
-### Marcar checklist si se cumplió en la matriz de capacitación con SS:
+### Marcar checklist en la matriz de capacitación con SS:
 
 [Matriz de capacitación](https://docs.google.com/spreadsheets/d/145XwjhKBz13pcvVxq15e32lJOc5O17LS0yksrM53FXE/edit#gid=0)
 
