@@ -480,6 +480,8 @@ Primero, deberás crear los directorios necesario
 Agregar y configurar los siguientes dos archivos:
 >> ```config.js```
 ```
+import dotenv from 'dotenv';
+dotenv.config();
 const {
     API_KEY,
     AUTH_DOMAIN,
@@ -619,6 +621,8 @@ export default Message;
 ### 8.5 Configuración de archivos en directorio controller
 
 Directorio importante, puesto que es parte de los `servicios` que ofrecerá nuestra aplicación, es donde tenemos acceso a la base de datos `Firestore`. Entonces, iré paso por paso, explicando los métodos.
+
+Dicho file tendrá el nombre de `message.controller.js`.
 
 ### 8.5.1 Imports necesarios
 
