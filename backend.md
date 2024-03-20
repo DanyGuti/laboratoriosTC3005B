@@ -1,4 +1,4 @@
-# Configuración de BACKEND SERVICE
+****# Configuración de BACKEND SERVICE
 
 ---
 
@@ -16,6 +16,7 @@
 
 En este laboratorio levantaremos un servicio de backend.
 
+---
 Las tecnologías a utilizar son las siguientes:
 
 * NodeJS
