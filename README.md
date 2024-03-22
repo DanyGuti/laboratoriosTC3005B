@@ -7,9 +7,9 @@ Capacitación del proyecto Housse of Valkyr
 
 Este repositorio contiene documentación y recursos para entrenar a los integrantes del proyecto de Housse of Valkyr a sobrellevar el proyecto.
 
-## Training Sessions Schedule
+## Laboratorios incluidos
 
-The following table outlines the schedule for the training sessions:
+La siguiente tabla muestra el material, tema, instructor y el link al laboratorio correspondiente.
 
 |  Material     | Tema                            | Instructor            |  Laboratorio  |
 | ------------- | ------------------------------- | -------------         | --------------
