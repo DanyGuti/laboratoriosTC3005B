@@ -1,4 +1,4 @@
-****# Configuración de BACKEND SERVICE
+# Configuración de BACKEND SERVICE
 
 ---
 
