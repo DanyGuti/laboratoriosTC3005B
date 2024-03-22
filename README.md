@@ -15,4 +15,4 @@ The following table outlines the schedule for the training sessions:
 | ------------- | ------------------------------- | -------------         | --------------
 | 1             | Configuracion  backend service  | Dani Gtz y Gabriel Córdoba      |  [Configuración backend service](backend.md)
 | 2             | Test service                | Dani Gtz          |  [testing service](testing.md)
-| 3             | Frontend                 | Dani Gtz          |   [Frontend connection service](frontend.md)
+| 3             | Frontend                 |           |   [Frontend connection service](frontend.md)
