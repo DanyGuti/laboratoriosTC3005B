@@ -124,7 +124,7 @@ npm i nodemon --save-dev
 ---
 ## Paso 3 Creación de base de datos Firestore
 
-Antes de pasar con incializar la base de datos Firestore en la UI de tu proyecto Firebase, debemos de instalar lo siguiente:
+Antes de pasar con incializar la base de datos Firestore en la UI de tu proyecto Firebase, debemos de instalar lo siguiente, así que ejecuta lo siguiente en tu terminal:
 ```
 firebase init firestore
 ```
