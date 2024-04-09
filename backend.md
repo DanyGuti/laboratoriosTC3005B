@@ -413,7 +413,7 @@ Teniendo todo lo anterior, el folder de infra luce así:
 import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
-import functions from './functions.js';
+import functions from "firebase-functions";
 
 const port = process.env.DEV_PORT || process.env.TESTING_ENVIRONMENT_PORT || 3000;
 const loc_env = process.env.NODE_ENV || "development";
